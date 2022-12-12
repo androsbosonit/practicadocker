@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginxproxy/nginx-proxy
+    ports: 
+      - "80:80"
+    volumes:
+    - /var/run/docker.sock:/tmp/docker.sock:ro
+    environment:
+      DEFAULT_HOST: web1.localhost
+
+  site1:
+    build: web1
+    pull_policy: build
+    environment:
+      VIRTUAL_HOST: web1.localhost
+
+  site2:
+    build: web2
+    pull_policy: build
+    environment:
+      VIRTUAL_HOST: web2.localhost
