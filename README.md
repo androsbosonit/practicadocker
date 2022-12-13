@@ -52,3 +52,7 @@ docker-compose up -d
 
 y compruebo que me redirecciona a mi proxy web1.
 
+Ejemplos de uso:
+
+1. Abrir navegador Firefox
+2. Poner las siguientes urls: web1.localhost, web2.localhost, si ponemos web3.localhost o loquesea.localhost automáticamente redirijirá al uno, porque así ha sido configurado.
